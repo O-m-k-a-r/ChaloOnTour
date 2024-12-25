@@ -33,13 +33,13 @@ st.set_page_config(
 )
 st.title("Tour Itinerary Generator")
 
-API_KEY = st.secrets['API_KEY']
-RAPID_API_KEY = st.secrets["RAPID_API_KEY"]
-AMADEUS_API_KEY = st.secrets["AMADEUS_API_KEY"]
-AMADEUS_API_SECRET = st.secrets["AMADEUS_API_SECRET"]
-pexels_api_key = st.secrets["PEXELS_API_KEY"]
-pixabay_api_key = st.secrets["PIXABAY_API_KEY"]
-unsplash_access_key = st.secrets["UNSPLASH_ACCESS_KEY"]
+API_KEY = st.secrets["api_keys"]["API_KEY"]
+RAPID_API_KEY = st.secrets["api_keys"]["RAPID_API_KEY"]
+AMADEUS_API_KEY = st.secrets["api_keys"]["AMADEUS_API_KEY"]
+AMADEUS_API_SECRET = st.secrets["api_keys"]["AMADEUS_API_SECRET"]
+pexels_api_key = st.secrets["api_keys"]["PEXELS_API_KEY"]
+pixabay_api_key = st.secrets["api_keys"]["PIXABAY_API_KEY"]
+unsplash_access_key = st.secrets["api_keys"]["UNSPLASH_ACCESS_KEY"]
 col1, col2 = st.columns(2)
 
 input_dict['dest'] = col1.text_input("Destination", key='dest',placeholder='ex. Himachal Pradesh')
