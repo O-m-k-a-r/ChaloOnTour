@@ -33,7 +33,7 @@ st.set_page_config(
 )
 st.title("Tour Itinerary Generator")
 
-API_KEY = st.secrets["API_KEY"]
+API_KEY = st.secrets['API_KEY']
 RAPID_API_KEY = st.secrets["RAPID_API_KEY"]
 AMADEUS_API_KEY = st.secrets["AMADEUS_API_KEY"]
 AMADEUS_API_SECRET = st.secrets["AMADEUS_API_SECRET"]
