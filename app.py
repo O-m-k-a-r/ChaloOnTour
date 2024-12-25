@@ -1,4 +1,3 @@
-# https://shravani1383-ai-travel-itinerary-generator-app-rrzl0w.streamlit.app/
 import json
 import logging
 import math
