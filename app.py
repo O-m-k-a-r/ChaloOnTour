@@ -945,7 +945,7 @@ def text_to_doc(itinerary, input_dict):
 
     # Filter only the .docx files
     files_to_merge = [file for file in files_to_merge if file.endswith('.docx')]
-    files_to_merge.sort()
+    files_to_merge.sort(key=lambda x: int(x.split('_')[1]))
     # Loop through the list
     for file in files_to_merge:
         # Construct the full file path
