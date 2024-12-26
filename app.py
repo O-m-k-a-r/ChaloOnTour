@@ -304,7 +304,7 @@ def generate_itinerary(input_dict):
                   f"{input_dict['start_date']}, ending on {input_dict['end_date']}. Call the function 'get_flight_hotel_info'"
 
     completion = client.chat.completions.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4o-mini",
         messages=[{"role": "user", "content": user_prompt}],
         # Add function calling
         functions=function_descriptions,
@@ -371,7 +371,7 @@ def generate_itinerary(input_dict):
                    f"Also consider {special_note} if given as input from the user."\
                    f"Strictly follow the number of days and the itinerary language should be like if a travel agent is speaking to a person." \
 
-   # Generate the travel itinerary using the modified user message
+   # Generate the travel itinerary using the modified user message Python 3.11.5
     chat_completion = client.chat.completions.create(
         messages=[
             {
@@ -379,7 +379,7 @@ def generate_itinerary(input_dict):
                 "content": user_message,
             }
         ],
-        model="gpt-3.5-turbo",
+        model="gpt-4o-mini",
         stream=True,
     )
 
@@ -440,7 +440,7 @@ def extract_attractive_locations(response):
  \
         # Generate the travel itinerary using the modified user message
     chat_completion = client.chat.completions.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4o-mini",
         messages=[
             {
                 "role": "user",
@@ -603,7 +603,7 @@ def prompt_for_new_location(day_number, location_name, response):
              f"provide only the location name in format Day Day number: new location name, do not provide whole response" \
         # Generate the travel itinerary using the modified user message
     new_location = client.chat.completions.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4o-mini",
         messages=[
             {
                 "role": "user",
