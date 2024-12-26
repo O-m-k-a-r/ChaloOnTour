@@ -943,13 +943,12 @@ def text_to_doc(itinerary, input_dict):
     # List all files in the folder
     files_to_merge = os.listdir(folder_path)
 
-    # Filter only the .docx files
-    files_to_merge = [file for file in files_to_merge if file.endswith('.docx')]
-    cover_page = "cover_page.docx"
-    if cover_page in files_to_merge:
-        files_to_merge.remove(cover_page)
-    files_to_merge.sort(key=lambda x: int(x.split('_')[1]))
-    files_to_merge.insert(0, cover_page)
+    cover_page = [file for file in files_to_merge if file == "cover_page.docx"]
+    day_itineraries = [file for file in files_to_merge if re.match(r'^day_\d+_itinerary\.docx$', file)]
+    day_itineraries.sort(key=lambda x: int(re.search(r'\d+', x).group()))
+
+    files_to_merge = cover_page + day_itineraries
+
     # Loop through the list
     for file in files_to_merge:
         # Construct the full file path
