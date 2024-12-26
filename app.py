@@ -947,7 +947,7 @@ def text_to_doc(itinerary, input_dict):
     day_itineraries = [file for file in files_to_merge if re.match(r'^day_\d+_itinerary\.docx$', file)]
     day_itineraries.sort(key=lambda x: int(re.search(r'\d+', x).group()))
 
-    # files_to_merge = cover_page + day_itineraries
+    files_to_merge = cover_page + day_itineraries
 
     # files_to_merge = os.listdir(folder_path)
 
